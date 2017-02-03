@@ -40,12 +40,7 @@ class Linked_List_Node
 		//Destructor
 		~Linked_List_Node<T>()
 		{
-			delete next;
-			next = NULL;
 		}
-
-		//Initialization
-		void initialize();
 
 		//Set Data
 		void set_data(T data)
