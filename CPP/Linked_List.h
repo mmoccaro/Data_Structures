@@ -101,11 +101,11 @@ class Linked_List
 			current = head;
 			head = head->get_next();
 
-			current->set_next(NULL);
+			T data = current->get_data();
 			delete current;
 			current = head;
 
-			return 1;
+			return data;
 		}
 
 		//Remove Back
