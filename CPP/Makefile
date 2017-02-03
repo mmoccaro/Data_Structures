@@ -20,7 +20,6 @@ Test_Driver.exe: Test_Driver.cpp Linked_List.h Linked_List_Node.h
 .PHONY: clean refresh
 
 clean:
-	rm *.o
 	rm Test_Driver.exe
 
 refresh:
