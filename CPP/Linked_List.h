@@ -18,6 +18,9 @@
 //Namespaces
 using namespace std;
 
+//Enums
+enum Type{SINGLY_LINKED_LIST, DOUBLY_LINKED_LIST};
+
 //Template Class
 template <class T>
 
@@ -29,6 +32,9 @@ class Linked_List
 		Linked_List()
 		{
 			head = tail = current = NULL;
+			type = SINGLY_LINKED_LIST;
+			dummy_head_node = false;
+			circular_list = false;
 		}
 
 		//Copy Constructor
@@ -136,9 +142,16 @@ class Linked_List
 		}
 
 	private:
+
+		//Node Pointers
 		Linked_List_Node<T> *head;
 		Linked_List_Node<T> *tail;
 		Linked_List_Node<T> *current;
 		Linked_List_Node<T> *temp;
+
+		//Type
+		Type type;
+		bool dummy_head_node;
+		bool circular_list;
 };
 #endif
