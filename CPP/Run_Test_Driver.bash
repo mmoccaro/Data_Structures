@@ -8,4 +8,4 @@
 #  This scripts runs the C++ Test Driver program.
 
 #Run The Test Driver
-./Test_Driver.exe
+./bin/Test_Driver.exe
