@@ -13,6 +13,7 @@
 
 //Directives
 #include<iostream>
+#include<exception>
 #include "Linked_List_Node.h"
 
 //Namespaces
@@ -44,7 +45,15 @@ class Linked_List
 			current = list.head;
 
 			//Create head node
-			head = new Linked_List_Node<T>;
+			try
+			{
+				head = new Linked_List_Node<T>;
+			}
+			catch(bad_alloc)
+			{
+				cerr << "Copy Constructor Memory Allocation Failed." << endl;
+			}
+
 			head->set_data(current->get_data());
 			temp = head;	
 
