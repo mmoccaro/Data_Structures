@@ -9,18 +9,20 @@
 
 CC=g++
 CFLAGS=-Wall
+DIR_SRC=src/
+DIR_BIN=bin/
 
 .PHONY: clean refresh default
 
-default: Test_Driver.exe
+default: $(DIR_BIN)Test_Driver.exe
 
-Test_Driver.exe: Test_Driver.cpp Linked_List.h Linked_List_Node.h
-	$(CC) $(CFLAGS) Test_Driver.cpp -o Test_Driver.exe
+$(DIR_BIN)Test_Driver.exe: $(DIR_SRC)Test_Driver.cpp $(DIR_SRC)Linked_List.h $(DIR_SRC)Linked_List_Node.h
+	$(CC) $(CFLAGS) $(DIR_SRC)Test_Driver.cpp -o $(DIR_BIN)Test_Driver.exe
 
 #################################################################
 
 clean:
-	rm Test_Driver.exe
+	rm $(DIR_BIN)Test_Driver.exe
 
 refresh:
 	make clean
