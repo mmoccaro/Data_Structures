@@ -19,7 +19,7 @@ using namespace std;
 int main()
 {
 	//Test Driver
-	cout << "\nC++ Data Structures Test Driver" << endl;
+	cout << "\n-- C++ Data Structures Test Driver" << endl;
 
 	Linked_List<int> list;
 	list.add_front(7);
@@ -31,16 +31,16 @@ int main()
 	list.add_front(34);
 	list.print();
 
-	cout << "LIST 2-------------" << endl;
+	cout << "-- LIST 2-------------" << endl;
 	Linked_List<int> list2(list);
 	list2.print();
-	cout << "Adding 78 to back..." << endl;
+	cout << "-- Adding 78 to back..." << endl;
 	list2.add_back(78);
 	list2.print();
-	cout << "Removing 78 from back..." << endl;
+	cout << "-- Removing 78 from back..." << endl;
 	int data = list2.remove_back();
 	list2.print();
-	cout << "Removing from front..." << endl;
+	cout << "-- Removing from front..." << endl;
 	data = list2.remove_front();
 	list2.print();
 	
