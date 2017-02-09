@@ -51,7 +51,7 @@ class Linked_List
 			}
 			catch(bad_alloc)
 			{
-				cerr << "Copy Constructor Memory Allocation Failed." << endl;
+				cerr << "Memory Allocation Failed." << endl;
 			}
 
 			head->set_data(current->get_data());
@@ -62,7 +62,14 @@ class Linked_List
 			//Copy the remainder of the list
 			while(current != NULL)
 			{		
-				temp->set_next(new Linked_List_Node<T>);
+				try
+				{
+					temp->set_next(new Linked_List_Node<T>);
+				}
+				catch(bad_alloc)
+				{
+					cerr << "Memory Allocation Failed." << endl;
+				}
 				temp = temp->get_next();		 
 				temp->set_data(current->get_data());
 				current = current->get_next();
@@ -90,7 +97,14 @@ class Linked_List
 			current = head;
 
 			//Create a new node and set its parameters
-			head = new Linked_List_Node<T>;
+			try
+			{
+				head = new Linked_List_Node<T>;
+			}
+			catch(bad_alloc)
+			{
+				cerr << "Memory allocation failed." << endl;
+			}
 			head->set_data(node_data);
 			head->set_next(current);
 			current = head;
@@ -104,7 +118,15 @@ class Linked_List
 			{
 				current = current->get_next();
 			}
-			current->set_next(new Linked_List_Node<T>);
+
+			try
+			{
+				current->set_next(new Linked_List_Node<T>);
+			}
+			catch(bad_alloc)
+			{
+				cerr << "Memory allocation failed." << endl;
+			}
 			current = current->get_next();
 			current->set_data(node_data);
 			current->set_next(NULL);
